@@ -201,7 +201,7 @@ class MainWindow(QWidget):
         scroll_area.setWidgetResizable(True)
         scroll_area.setWidget(widget)
         scroll_area.setMinimumWidth(300)
-        scroll_area.setMinimumHeight(200)
+        scroll_area.setMinimumHeight(300)
       
         # add the scroll area to the layout
         layout.addWidget(scroll_area)
@@ -216,6 +216,7 @@ class MainWindow(QWidget):
         layout.addItem(spacer)
         self.setLayout(layout)
         self.setWindowTitle('Alarm')
+        self.setWindowIcon(QIcon('./icon/alarm.png'))
         self.show()
     
     
@@ -291,7 +292,6 @@ class MainWindow(QWidget):
             self.set_clock_minute_label.setText(str(self.set_clock_minute))
         
     def increase_hour(self):
-        print("increase_hour")
         self.set_clock_hour +=1
         if self.set_clock_hour > 23:
             self.set_clock_hour = 0
@@ -408,6 +408,7 @@ class CustomDialog(QDialog):
         super().__init__()
         self.current_time = QTime.currentTime()
         self.setWindowTitle("Alarm")
+        self.setWindowIcon(QIcon('./icon/alarm.png'))
         self.setStyleSheet(styleSheet)
         self.alarm=alarm
         self.setFixedSize(300, 150)
