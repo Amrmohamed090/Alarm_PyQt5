@@ -184,12 +184,7 @@ class MainWindow(QWidget):
         
         layout.addLayout(self.set_time_layout)
         layout.addLayout(self.repeat_once_layout)
-        # add line separator
-        line = QFrame()
-        line.setFrameShape(QFrame.HLine)
-        line.setFrameShadow(QFrame.Sunken)
-        layout.addWidget(line)
-        
+       
         #Create alarms layout
         self.alarms_layout = QVBoxLayout()
         widget = QWidget()
